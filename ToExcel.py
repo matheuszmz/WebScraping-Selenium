@@ -8,7 +8,7 @@ def check_values_in_list(list_values):
             i.append(len(v))
     return len(i)
 
-def export_to_excel(path=os.getcwd(), dictionary):
+def export_to_excel(dictionary, name, path=os.getcwd()):
     if (type(dictionary) is not dict):
         print('Erro - Dicionário inválido.')
     else:
@@ -29,7 +29,7 @@ def export_to_excel(path=os.getcwd(), dictionary):
                         i += 1
                     j += 1
                     i = 2
-                wb.save(path)        
+                wb.save(path + name + '.xlsx')        
             else:
                 print('Erro - As chaves não possuem a mesma quantidade de valores.')
         except PermissionError:
